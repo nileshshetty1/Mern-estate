@@ -30,6 +30,8 @@ const Profile = () => {
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [showListingsError, setShowListingsError] = useState(false);
+  const [userListing, setUserListing] = useState([]);
+
   const dispatch = useDispatch();
   useEffect(() => {
     if (file) {
@@ -129,6 +131,8 @@ const Profile = () => {
         setShowListingsError(true);
         return;
       }
+
+      setUserListing(data);
     } catch (error) {
       setShowListingsError(true);
     }
@@ -223,6 +227,41 @@ const Profile = () => {
       <p className="text-red-700 mt-5">
         {showListingsError ? "Error Showing Listings" : ""}
       </p>
+      {userListing && userListing.length > 0 && (
+        <div className="flex flex-col gap-4">
+          <h1 className="text-center my-7 text-2xl font-semibold">
+            Your Listings
+          </h1>
+          {userListing.map((listing) => (
+            <div
+              key={listing._id}
+              className="border rounded-lg p-3 flex justify-between items-center gap-4"
+            >
+              <Link to={`/listings/${listing._id}`}>
+                <img
+                  className="h-16 w-16 object-contain"
+                  src={listing.imageUrls[0]}
+                  alt="listing cover"
+                />
+              </Link>
+              <Link
+                className="flex-1 text-slate-700 font-semibold  hover:underline truncate"
+                to={`/listings/${listing._id}`}
+              >
+                <p>{listing.name}</p>
+              </Link>
+              <div className="flex flex-col item-center">
+                <button className="text-red-700 uppercase font-semibold">
+                  Delete
+                </button>
+                <button className="text-green-700 uppercase font-semibold">
+                  Edit
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

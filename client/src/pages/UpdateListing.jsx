@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 
-const UpdateListing = () => {
+const CreateListing = () => {
   const navigate = useNavigate();
   const params = useParams();
   const { currentUser } = useSelector((state) => state.user);
@@ -281,7 +281,7 @@ const UpdateListing = () => {
                 max="12"
                 required
                 onChange={handleChange}
-                checked={formData.bathrooms}
+                value={formData.bathrooms}
               />
               <p>Baths</p>
             </div>
@@ -385,4 +385,4 @@ const UpdateListing = () => {
   );
 };
 
-export default UpdateListing;
+export default CreateListing;

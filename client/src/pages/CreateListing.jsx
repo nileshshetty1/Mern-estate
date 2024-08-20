@@ -264,7 +264,7 @@ const CreateListing = () => {
                 max="12"
                 required
                 onChange={handleChange}
-                checked={formData.bathrooms}
+                value={formData.bathrooms}
               />
               <p>Baths</p>
             </div>

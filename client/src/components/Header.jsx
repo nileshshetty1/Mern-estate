@@ -5,7 +5,7 @@ import { useState } from "react";
 const Header = () => {
   const Navigate = useNavigate();
   const { currentUser } = useSelector((state) => state.user);
-  const [searchTerm, setSearchTerm] = useState("second");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();

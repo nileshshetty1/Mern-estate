@@ -53,7 +53,7 @@ const Home = () => {
           Find Your Next <span className="text-slate-500">Perfect</span>
           <br /> place with ease
         </h1>
-        <div className="text-gray-400 text-xl sm:text-sm">
+        <div className="text-gray-400 text-sm lg:text-lg ">
           Royal Estate is awarded the best listing site in switzerland by BarCa.
           <br />
           we have a wide range of products for you to choose from.

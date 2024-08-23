@@ -48,12 +48,12 @@ const Home = () => {
 
   return (
     <div>
-      <div className="flex flex-col gap-6 p-28 max-w-6xl mx-auto">
+      <div className="flex flex-col gap-6 p-5 lg:p-28 max-w-6xl mx-auto">
         <h1 className="text-slate-700 font-bold text-4xl lg:text-6xl">
           Find Your Next <span className="text-slate-500">Perfect</span>
           <br /> place with ease
         </h1>
-        <div className="text-gray-400 text-xl sm:text-xl">
+        <div className="text-gray-400 text-xl sm:text-sm">
           Royal Estate is awarded the best listing site in switzerland by BarCa.
           <br />
           we have a wide range of products for you to choose from.
